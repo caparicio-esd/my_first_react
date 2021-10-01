@@ -7,9 +7,7 @@ const Cases = () => {
         <div className="cases">
             <div className="section_header"></div>
             <div className="section_content">
-                {/* <SingleCase title="hola" muted={false} category="red" /> */}
-
-
+                
                 {
                     cases.map((case_, i) => (
                         <SingleCase

@@ -1,39 +1,73 @@
 import React from 'react'
+import styles from "./SingleCase.module.scss"
+
+
+
+/**
+ * 
+ * Blablablablalba, 
+ * 
+ * @param {String} color : Color de entrada;
+ * @returns {String} : blabla
+ */
+const getTheColor = (color) => {
+    let colorOut;
+    switch (color) {
+        case "red":
+            colorOut = "#991128";
+            break;
+        case "green":
+            colorOut =  "#11992c";
+            break;
+        case "blue":
+            colorOut =  "#129u01";
+            break;
+        default:
+            colorOut =  "#ddd";
+    }
+    return colorOut;
+}
+
 
 
 // const SingleCase = ({ title }) => {
 const SingleCase = (props) => {
-    console.log(props);
 
     const mutedButtonClass = [
         "button",
         props.muted ? "muted" : "",
+        styles.muted
     ]
     const pinnedButtonClass = [
         "button",
-        props.pinned ? "pinned" : ""
+        props.pinned ? "pinned" : "",
+        styles.pinned
     ]
     const caseClass = [
         "case",
         props.muted ? "muted" : "",
-        props.pinned ? "pinned" : ""
+        props.pinned ? "pinned" : "",
+        styles.case
     ]
 
-    2 > 3 ? "hola" : "adios"
+    const stylesCategory = {
+        backgroundColor: getTheColor(props.category)
+    }
 
     return (
         <div className={caseClass.join(" ")}>
-            <div className="case_left">
+            <div className={styles.case_left}>
                 {
                     props.category ?
-                        <div className="category">
+                        <div className={styles.category}
+                        style={stylesCategory}>
                             {props.category}
                         </div>
                         : null
                 }
-                <h4 className="title">{props.title}</h4>
+                <h4 className={styles.title}>{props.title}</h4>
             </div>
-            <div className="case_right">
+            <div className={styles.case_right}>
                 <div className={mutedButtonClass.join(" ")}>Muted</div>
                 <div className={pinnedButtonClass.join(" ")}>Pinned</div>
             </div>

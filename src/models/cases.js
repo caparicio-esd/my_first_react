@@ -9,7 +9,7 @@ export const cases = [
         title: "adios",
         muted: true,
         pinned: true,
-        category: "greed"
+        category: "green"
     },
     {
         title: "hole",

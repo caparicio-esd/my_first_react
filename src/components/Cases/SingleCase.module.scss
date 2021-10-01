@@ -1,0 +1,41 @@
+@import "./../../vars";
+
+$lol: 1rem;
+
+
+
+.case {
+    padding: $lol;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    margin-bottom: 0.5rem;
+    border: 1px solid $color_primary;
+
+
+    .case_left {
+        display: flex;
+    }
+    .case_right {
+        display: flex;
+    }
+    .category {
+    
+    }
+    .title {
+    
+    }
+    .case_right {
+    
+    }
+    button {
+    
+    }
+    button.muted {
+    
+    }
+    button.pinned {
+    
+    }
+}
