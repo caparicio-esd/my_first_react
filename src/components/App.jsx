@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './Header/Header'
 import Cases from './Cases/Cases'
+import Counter from './Counter'
 
 const App = () => {
   return (
@@ -9,6 +10,9 @@ const App = () => {
       <div className="content">
         <Cases />
       </div>
+
+
+      <Counter />
     </div>
   )
 }

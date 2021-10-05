@@ -1,4 +1,4 @@
-@import "./../../vars";
+@import "./../../assets/sass/lib/vars";
 
 $lol: 1rem;
 
@@ -11,7 +11,7 @@ $lol: 1rem;
     justify-content: space-between;
     background: white;
     margin-bottom: 0.5rem;
-    border: 1px solid $color_primary;
+    border: 1px solid pink;
 
 
     .case_left {

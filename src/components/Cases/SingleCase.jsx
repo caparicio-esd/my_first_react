@@ -69,7 +69,8 @@ const SingleCase = (props) => {
             </div>
             <div className={styles.case_right}>
                 <div className={mutedButtonClass.join(" ")}>Muted</div>
-                <div className={pinnedButtonClass.join(" ")}>Pinned</div>
+                <div className={pinnedButtonClass.join(" ")}
+                    onClick={props.addCase}>Pinned</div>
             </div>
         </div>
     )
