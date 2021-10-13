@@ -1,6 +1,8 @@
 import React from 'react'
+import Category from '../Categories/Category';
 import styles from "./SingleCase.module.scss"
-
+import Button from './../Dsys/Button'
+import { PinDrop, VolumeOff } from '@material-ui/icons';
 
 
 /**
@@ -30,7 +32,6 @@ const getTheColor = (color) => {
 
 
 
-// const SingleCase = ({ title }) => {
 const SingleCase = (props) => {
 
     const mutedButtonClass = [
@@ -57,20 +58,16 @@ const SingleCase = (props) => {
     return (
         <div className={caseClass.join(" ")}>
             <div className={styles.case_left}>
-                {
-                    props.category ?
-                        <div className={styles.category}
-                        style={stylesCategory}>
-                            {props.category}
-                        </div>
-                        : null
-                }
+                <Category fill={getTheColor(props.category)} />
                 <h4 className={styles.title}>{props.title}</h4>
             </div>
             <div className={styles.case_right}>
-                <div className={mutedButtonClass.join(" ")}>Muted</div>
-                <div className={pinnedButtonClass.join(" ")}
-                    onClick={props.addCase}>Pinned</div>
+                <Button link={true} primary={false}>
+                    <VolumeOff />
+                </Button>
+                <Button link={true} primary={false}>
+                    <PinDrop />
+                </Button>
             </div>
         </div>
     )

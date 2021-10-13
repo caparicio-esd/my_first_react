@@ -13,13 +13,13 @@ const Cases = () => {
             pinned: false,
             category: "pink"
         }
-        const newCases = [...cases];  
+        const newCases = [...cases];
         newCases.push(newCase)
         setCases(newCases)
     }
 
     const removeLastCase = () => {
-        const newCases = [...cases];  
+        const newCases = [...cases];
         newCases.pop()
         setCases(newCases)
     }
@@ -27,21 +27,16 @@ const Cases = () => {
 
     return (
         <div className="cases">
-            <div className="section_header"></div>
-            <div className="section_content">
-                <button onClick={addNewCase}>add case</button>
-                <button onClick={removeLastCase}>remove case</button>
-                {
-                    cases.map((case_, i) => (
-                        <SingleCase
-                            key={i}
-                            title={case_.title}
-                            muted={case_.muted}
-                            category={case_.category}
-                            addCase={addNewCase} />
-                    ))
-                }
-            </div>
+            {
+                cases.map((case_, i) => (
+                    <SingleCase
+                        key={i}
+                        title={case_.title}
+                        muted={case_.muted}
+                        category={case_.category}
+                        addCase={addNewCase} />
+                ))
+            }
         </div>
     )
 }

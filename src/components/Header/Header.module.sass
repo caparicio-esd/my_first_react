@@ -1,0 +1,92 @@
+.header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: .5rem 1rem
+    font-size: .9rem
+    border-bottom: 1px solid #CDCDCD
+
+    .header_left
+        display: flex
+        align-items: center
+    
+        .header_brand
+            display: flex
+            align-items: center
+            margin-right: 2rem
+            .logo
+                display: flex
+                margin-right: 0.5rem
+            .slogan
+                font-weight: bold
+    
+        .header_searchbox
+            display: flex
+            align-items: center
+    
+            .form 
+                display: flex
+                align-items: center  
+                border-bottom: 1px solid #CDCDCD     
+                padding: .5rem    
+                .icon
+                    display: flex
+                    color: #888888  
+                    margin-right: .5rem
+                .input
+                    flex-basis: 100%
+                    display: flex
+                    .input_control
+                        border: 0
+                        background-color: transparent
+                        padding: 0
+                        &:focus
+                            outline: 0
+
+    .header_right
+        display: flex
+        align-items: center
+       
+        .header_navi
+            display: flex
+            align-items: center
+       
+            .notifications
+                display: flex
+                align-items: center
+                position: relative
+                margin-right: 2rem
+
+                .bubble
+                    position: absolute
+                    top: -7px
+                    right: -8px
+                    background: #43A1FC
+                    line-height: 0.9rem
+                    padding: 0.2rem
+                    border-radius: 9px
+                    color: white
+                    font-size: .7rem
+                    font-weight: bold
+                    min-width: 18px
+                    text-align: center
+
+       
+            .tasks
+                display: flex
+                align-items: center
+                margin-right: 2rem
+                .user_name 
+                    margin-left: .5rem
+
+            .user
+                display: flex
+                align-items: center
+                margin-right: 2rem
+
+                .user_name 
+                    font-weight: bold
+                    margin-left: .5rem
+
+        .header_toggle
+            display: flex

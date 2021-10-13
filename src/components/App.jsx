@@ -1,18 +1,13 @@
 import React from 'react'
 import Header from './Header/Header'
-import Cases from './Cases/Cases'
-import Counter from './Counter'
+import Content from './Content/Content'
+import styles from './App.module.sass'
 
 const App = () => {
   return (
-    <div className="App">
+    <div className={[styles.app].join(" ")}>
       <Header />
-      <div className="content">
-        <Cases />
-      </div>
-
-
-      <Counter />
+      <Content />
     </div>
   )
 }
