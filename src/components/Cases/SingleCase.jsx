@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Category from '../Categories/Category';
-import styles from "./SingleCase.module.scss"
+import styles from "./SingleCase.module.sass"
 import Button from './../Dsys/Button'
 import { PinDrop, VolumeOff } from '@material-ui/icons';
+import Tabulable from '../Dsys/Tabulable';
 
 
 /**
@@ -19,13 +20,13 @@ const getTheColor = (color) => {
             colorOut = "#991128";
             break;
         case "green":
-            colorOut =  "#11992c";
+            colorOut = "#11992c";
             break;
         case "blue":
-            colorOut =  "#129u01";
+            colorOut = "#129u01";
             break;
         default:
-            colorOut =  "#ddd";
+            colorOut = "#ddd";
     }
     return colorOut;
 }
@@ -33,6 +34,7 @@ const getTheColor = (color) => {
 
 
 const SingleCase = (props) => {
+    const [clicked, setClicked] = useState(false);
 
     const mutedButtonClass = [
         "button",
@@ -48,6 +50,7 @@ const SingleCase = (props) => {
         "case",
         props.muted ? "muted" : "",
         props.pinned ? "pinned" : "",
+        clicked ? "clicked" : "",
         styles.case
     ]
 
@@ -55,21 +58,27 @@ const SingleCase = (props) => {
         backgroundColor: getTheColor(props.category)
     }
 
+    const toggleClick = () => {
+        setClicked(!clicked)
+    }
+
     return (
-        <div className={caseClass.join(" ")}>
-            <div className={styles.case_left}>
-                <Category fill={getTheColor(props.category)} />
-                <h4 className={styles.title}>{props.title}</h4>
+        <Tabulable index={props.index}>
+            <div className={caseClass.join(" ")} onClick={toggleClick}>
+                <div className={styles.case_left}>
+                    <Category fill={getTheColor(props.category)} />
+                    <h4 className={styles.title}>{props.title}</h4>
+                </div>
+                <div className={styles.case_right}>
+                    <Button link={true} primary={false}>
+                        <VolumeOff />
+                    </Button>
+                    <Button link={true} primary={false}>
+                        <PinDrop />
+                    </Button>
+                </div>
             </div>
-            <div className={styles.case_right}>
-                <Button link={true} primary={false}>
-                    <VolumeOff />
-                </Button>
-                <Button link={true} primary={false}>
-                    <PinDrop />
-                </Button>
-            </div>
-        </div>
+        </Tabulable>
     )
 }
 
